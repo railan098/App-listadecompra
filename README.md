@@ -145,7 +145,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 👨‍💻 Autor
 
 **alvesprotect**
-- GitHub: [@alvesprotect](https://github.com/alvesprotect)
+- GitHub: [@railan098](https://github.com/railan098)
 
 ## 🙏 Agradecimentos
 
