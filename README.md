@@ -156,8 +156,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 ## 📞 Suporte
 
 Se você encontrar algum problema ou tiver sugestões, por favor:
-- Abra uma [issue](https://github.com/seu-usuario/listadecompra/issues)
-- Entre em contato: alvesprotect@example.com
+- Abra uma [issue](https://github.com/railan098/listadecompra/issues)
+- Entre em contato: contato@alvesprotect.com.br
 
 ---
 
