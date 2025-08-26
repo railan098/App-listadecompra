@@ -1,171 +1,164 @@
-# 🛒 Lista de Compra - App Flutter
+# 📱 Lista de Compra - Flutter App
 
-Uma aplicação simples e funcional para gerenciar sua lista de compras, desenvolvida em Flutter.
+Um aplicativo de lista de compras desenvolvido em Flutter com integração Firebase, oferecendo uma experiência completa para gerenciar suas compras diárias.
 
 ## ✨ Funcionalidades
 
-✅ **Adicionar itens** - Nome, quantidade e observações
-✅ **Marcar como comprado** - Checkbox para acompanhar progresso
-✅ **Editar itens** - Modificar detalhes dos itens
-✅ **Deletar itens** - Remover itens da lista
-✅ **Limpar lista** - Apagar toda a lista de uma vez
-✅ **Armazenamento local** - Dados salvos no dispositivo
-✅ **Interface intuitiva** - Design Material 3 moderno
-✅ **Multiplataforma** - Funciona em Android, iOS, Web e Desktop
+- 🔐 **Autenticação Firebase** - Login com Google e Email/Senha
+- 📝 **Gerenciamento de Itens** - Adicionar, editar e remover itens
+- 💰 **Controle de Preços** - Preço unitário e cálculo automático de subtotais
+- 📊 **Resumo da Compra** - Total geral e estatísticas
+- ✅ **Status de Compra** - Marcar itens como comprados
+- 📱 **Interface Responsiva** - Otimizado para dispositivos Android
+- ☁️ **Sincronização em Nuvem** - Dados salvos no Firestore
+- 🔄 **Tempo Real** - Atualizações automáticas
 
-## 🚀 Como Usar
+## 🚀 Tecnologias Utilizadas
 
-### 1. **Adicionar Itens**
-- Toque no botão **+** (flutuante)
-- Digite o nome do item
-- Defina a quantidade
-- Adicione observações (opcional)
-- Toque em **Adicionar**
+- **Flutter** - Framework de desenvolvimento
+- **Firebase** - Backend e autenticação
+  - **Firestore** - Banco de dados
+  - **Firebase Auth** - Autenticação de usuários
+- **Dart** - Linguagem de programação
+- **Material Design** - Interface do usuário
 
-### 2. **Gerenciar Itens**
-- **Marcar como comprado**: Toque no checkbox
-- **Deletar**: Toque no ícone de lixeira
-- **Limpar lista**: Toque no ícone de limpar na barra superior
+## 📋 Pré-requisitos
 
-### 3. **Navegação**
-- Interface simples e direta
-- Sem necessidade de login ou conta
+- Flutter SDK (versão 3.0 ou superior)
+- Dart SDK
+- Android Studio / VS Code
+- Conta Firebase
+- Dispositivo Android ou emulador
 
-## 🏗️ Estrutura do Projeto
+## 🛠️ Instalação
+
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/listadecompra.git
+   cd listadecompra
+   ```
+
+2. **Instale as dependências**
+   ```bash
+   flutter pub get
+   ```
+
+3. **Configure o Firebase**
+   - Crie um projeto no [Firebase Console](https://console.firebase.google.com/)
+   - Baixe o arquivo `google-services.json` para Android
+   - Coloque na pasta `android/app/`
+   - Configure as regras do Firestore
+
+4. **Execute o aplicativo**
+   ```bash
+   flutter run
+   ```
+
+## 🔧 Configuração Firebase
+
+### Android
+1. Adicione o arquivo `google-services.json` em `android/app/`
+2. Configure o `build.gradle.kts` com o plugin do Firebase
+
+### iOS
+1. Adicione o arquivo `GoogleService-Info.plist` em `ios/Runner/`
+2. Configure o `AppDelegate.swift`
+
+## 📱 Estrutura do Projeto
 
 ```
 lib/
-├── main.dart                           # Ponto de entrada
-├── models/
-│   └── item_compra.dart              # Modelo de dados
-├── services/
-│   └── local_storage_service.dart    # Serviço de armazenamento local
-└── screens/
-    └── lista_compra_simple_screen.dart # Tela principal
+├── main.dart                 # Ponto de entrada da aplicação
+├── firebase_config.dart      # Configuração do Firebase
+├── firebase_options.dart     # Opções do Firebase
+├── models/                   # Modelos de dados
+│   ├── item_compra.dart     # Modelo do item de compra
+│   └── usuario.dart         # Modelo do usuário
+├── screens/                  # Telas da aplicação
+│   ├── login_screen.dart    # Tela de login
+│   ├── lista_compra_firebase_screen.dart  # Tela principal
+│   └── perfil_usuario_screen.dart         # Perfil do usuário
+└── services/                 # Serviços
+    ├── auth_service.dart     # Serviço de autenticação
+    ├── firebase_service.dart # Serviço do Firebase
+    └── usuario_service.dart  # Serviço do usuário
 ```
 
-## 🎨 Design
+## 🎯 Como Usar
 
-- **Tema**: Verde (shopping cart)
-- **Design System**: Material 3
-- **Cores**: Adaptativas para tema claro/escuro
-- **Ícones**: Material Design Icons
+1. **Login**: Faça login com sua conta Google ou crie uma conta
+2. **Adicionar Itens**: Toque no botão "+" para adicionar novos itens
+3. **Gerenciar**: Edite preços, quantidades e observações
+4. **Marcar**: Use o checkbox para marcar itens como comprados
+5. **Acompanhar**: Visualize o total e estatísticas no topo da tela
 
-## 📱 Plataformas Suportadas
+## 🔒 Segurança
 
-- ✅ Android
-- ✅ iOS  
-- ✅ Web
-- ✅ Windows
-- ✅ macOS
-- ✅ Linux
+- Autenticação obrigatória para acessar dados
+- Regras do Firestore configuradas para proteger dados do usuário
+- Cada usuário só acessa suas próprias listas
 
-## 🧪 Como Executar
+## 📊 Funcionalidades de Preço
 
-### Pré-requisitos
-- Flutter SDK 3.9.0 ou superior
-- Dart 3.0.0 ou superior
+- **Preço Unitário**: Defina o valor de cada item
+- **Quantidade**: Especifique a quantidade desejada
+- **Subtotal**: Calculado automaticamente (preço × quantidade)
+- **Total Geral**: Soma de todos os subtotais
+- **Formatação**: Suporte para valores decimais (centavos)
 
-### Passos
-1. Clone o repositório
-2. Execute `flutter pub get`
-3. Execute `flutter run`
+## 🎨 Interface
 
-### Comandos Úteis
-```bash
-# Instalar dependências
-flutter pub get
+- **Design Material**: Seguindo as diretrizes do Material Design
+- **Responsivo**: Adapta-se a diferentes tamanhos de tela
+- **Temas**: Suporte a temas claro/escuro
+- **Animações**: Transições suaves entre telas
 
-# Executar em modo debug
-flutter run
+## 🚧 Desenvolvimento
 
-# Executar em modo release
-flutter run --release
+### Estrutura de Commits
+- `feat:` Nova funcionalidade
+- `fix:` Correção de bug
+- `docs:` Documentação
+- `style:` Formatação de código
+- `refactor:` Refatoração
+- `test:` Testes
+- `chore:` Tarefas de manutenção
 
-# Build para web
-flutter build web
-
-# Build para Android
-flutter build apk
-```
-
-## 🔧 Dependências
-
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.8
-  shared_preferences: ^2.2.2  # Armazenamento local
-```
-
-## 📊 Modelo de Dados
-
-```dart
-class ItemCompra {
-  final String id;
-  final String nome;
-  final int quantidade;
-  final bool comprado;
-  final DateTime dataCriacao;
-  final String? observacao;
-}
-```
-
-## 💾 Armazenamento
-
-- **Local**: Dados salvos no dispositivo usando SharedPreferences
-- **Persistente**: Dados mantidos entre sessões
-- **Offline**: Funciona sem conexão com internet
-
-## 🚀 Funcionalidades Futuras
-
-- [ ] Categorias de produtos
-- [ ] Listas compartilhadas
-- [ ] Histórico de compras
-- [ ] Notificações
-- [ ] Backup na nuvem
-- [ ] Sincronização com Firebase (opcional)
-
-## 🆘 Solução de Problemas
-
-### App não inicia
-```bash
-flutter clean
-flutter pub get
-flutter run
-```
-
-### Dados não aparecem
-- Verifique se o app tem permissão de armazenamento
-- Reinicie o app
-
-### Erro de build
-- Verifique se o Flutter está atualizado
-- Execute `flutter doctor` para diagnóstico
+### Branches
+- `main` - Código de produção
+- `develop` - Desenvolvimento
+- `feature/*` - Novas funcionalidades
+- `hotfix/*` - Correções urgentes
 
 ## 🤝 Contribuição
 
-1. Fork o projeto
-2. Crie uma branch para sua feature
-3. Commit suas mudanças
-4. Push para a branch
+1. Faça um fork do projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
 5. Abra um Pull Request
 
 ## 📄 Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Autor
 
-Desenvolvido com ❤️ usando Flutter
+**alvesprotect**
+- GitHub: [@alvesprotect](https://github.com/alvesprotect)
 
-## 🔗 Links Úteis
+## 🙏 Agradecimentos
 
-- [Flutter Documentation](https://flutter.dev/docs)
-- [Material Design](https://material.io/design)
-- [SharedPreferences](https://pub.dev/packages/shared_preferences)
+- Flutter Team pelo framework incrível
+- Firebase Team pela infraestrutura robusta
+- Comunidade Flutter pela inspiração e suporte
+
+## 📞 Suporte
+
+Se você encontrar algum problema ou tiver sugestões, por favor:
+- Abra uma [issue](https://github.com/seu-usuario/listadecompra/issues)
+- Entre em contato: alvesprotect@example.com
 
 ---
 
-**🎯 Objetivo**: Simplificar o gerenciamento de listas de compra com uma interface intuitiva e funcionalidades essenciais.
+⭐ **Se este projeto te ajudou, considere dar uma estrela!**
