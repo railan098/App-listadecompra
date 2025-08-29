@@ -2,7 +2,7 @@
 
 Um aplicativo de lista de compras desenvolvido em Flutter com integração ao Firebase, oferecendo uma experiência completa para gerenciar suas compras diárias.
 
-## Telas Android
+## 📱Telas Android
 ![Print login](/telas/login.png)
 ![print adicionando](/telas/adicionando.png)
 ![Print lista](/telas/lista.png)
